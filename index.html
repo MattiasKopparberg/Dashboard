@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="./JS/script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -15,19 +15,29 @@
       </div>
     </header>
     <main class="main">
+      <h1 id="greeting">John Doe Dashboard</h1>
       <div class="mainDiv">
-        <div class="cards quickLinks">
-          <div class="socialLinks">
-            <button id="addLink">Click here to add a quicklink(https://www.example.com):</button>
-            <ul id="linkList"></ul>
+          <div class="socialLinks cards">
+            <h2>My quick links</h2>
+            <button id="addLink">Click here to add a quicklink(https://example.com):</button>
+            <ul id="linkList">
+            </ul>
+          </div>
+        <div class="cards weather">
+          <p>
+            Loading todays weather...
+          </p>
         </div>
-        <div class="cards weather"></div>
         <div class="cards stocks"></div>
-        <div class="cards notes"></div>
+        <div class="cards notes">
+          <textarea id="notes" placeholder="Write your notes here..."></textarea>
+        </div>
       </div>
     </main>
     <footer class="footer">
-      <div class="footerDiv"></div>
+      <div class="footerDiv">
+        <button id="randomImage">Click here to get a random image</button>
+      </div>
     </footer>
   </body>
 </html>

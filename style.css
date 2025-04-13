@@ -24,6 +24,9 @@
     font-weight: bold;
     display: inline-block;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
   }
   
   .main {
@@ -34,45 +37,156 @@
     width: 100%;
   }
   
+  #greeting{
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
   .mainDiv {
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 20px;
     width: 80%;
-    max-width: 1000px;
-    justify-content: center;
+    max-width: 1250px;
+    margin: 0 auto;
   }
   
-  .cards {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .quickLinks {
+.cards {
+  background: #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  height: auto;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.quick-link {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.link-favicon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#linkList{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    gap: 10px;
+    width: 100%;
   }
-  
+
+
+.link-title {
+    flex: 1;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+#addLink{
+  align-self: flex-end
+}
+.delete-icon {
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.delete-icon:hover {
+    color: red;
+}
+
   .socialLinks button {
-    background: #ddd;
+    background: #FFF;
     border: none;
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
   }
   
-  .socialLinks button:hover {
-    background: #ccc;
+  .socialLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-size: 1.5rem;
+  }
+
+  button:hover {
+    background-color: #ccc;
+  }
+
+  .weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  .weather img {
+    width: 50px;
+    height: 50px;;
+  }
+
+  .stocks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+  }
+
+
+  #notes {
+    width: 80%;
+    height: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
   }
   
   .footer {
     margin-top: 30px;
   }
   
+
+  @media (max-width: 768px) {
+    .mainDiv {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .quickLinks {
+      align-items: center;
+    }
+    #addLink{
+      align-self: center;
+    }
+  }
