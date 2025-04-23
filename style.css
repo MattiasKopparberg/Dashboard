@@ -133,6 +133,10 @@
     font-size: 1.5rem;
   }
 
+  .socialLinks h2{
+    align-self: center;
+  } 
+
   button:hover {
     background-color: #ccc;
   }
@@ -180,6 +184,7 @@
 
   @media (max-width: 768px) {
     .mainDiv {
+      padding-top: 450px;
       grid-template-columns: 1fr;
       gap: 20px;
     }
@@ -188,5 +193,11 @@
     }
     #addLink{
       align-self: center;
+    }
+  }
+
+  @media(max-width: 510px) {
+    .mainDiv {
+      padding-top: 550px
     }
   }

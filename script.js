@@ -3,12 +3,32 @@ function getStoredLinks() {
   return JSON.parse(localStorage.getItem("quickLinks") || "[]");
 }
 
+function loadDashboardName() {
+  const name = localStorage.getItem("dashBoardName");
+  if (name) {
+    document.querySelector("#greeting").innerHTML = `${name} Dashboard`;
+  }
+}
+
 function saveLinks(links) {
   localStorage.setItem("quickLinks", JSON.stringify(links));
 }
 
 function padTime(value) {
   return String(value).padStart(2, "0");
+}
+
+function setupNotes() {
+  const notesEl = document.querySelector("#notes");
+  const savedNotes = localStorage.getItem("dashboardNotes");
+
+  if (savedNotes) {
+    notesEl.value = savedNotes;
+  }
+
+  notesEl.addEventListener("input", () => {
+    localStorage.setItem("dashboardNotes", notesEl.value);
+  });
 }
 
 
@@ -130,7 +150,7 @@ function getWeather() {
         document.querySelector(".weather").innerHTML = weatherItems;
       })
       .catch(err => console.error("Weather error:", err));
-  }, (err) => {
+  }, () => {
     document.querySelector(".weather").innerHTML = `
       <div class="weather-item">
         <span class="weather-icon">🌍</span>
@@ -175,6 +195,10 @@ getTimeDate();
 setInterval(getTimeDate, 60000);
 
 renameDashboard();
+
+setupNotes();
+
+loadDashboardName()
 
 loadSavedLinks();
 
